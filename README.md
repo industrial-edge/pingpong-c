@@ -17,10 +17,9 @@
 This repository contains the source files to build the Databus Ping Pong application example implemented in C. Please refer to the [main repository](https://github.com/industrial-edge/databus-ping-pong) for more information about this application example.
 
 ### Overview
-
+This example uses the [Eclipse Paho MQTT C library](https://github.com/eclipse/paho.mqtt.c) to enable it to connect to the IE Databus. 
 This implementation of the Databus Ping Pong application example uses a multi-stage process for building the docker image to keep the image size as small as possible. The two ``FROM`` Statements in the [Dockerfile](src/Dockerfile) separate the build process into two stages.
-This example uses th [Eclipse Paho MQTT C library](https://github.com/eclipse/paho.mqtt.c) to enable it to connect to the IE Databus. 
-The fist container is compiling the source code of the application and the paho library which then get copied to the second container which will be the final image for the application. Please refer to the the [docker documentation](https://docs.docker.com/develop/develop-images/multistage-build/) for more information regarding multi-stage builds.
+The fist stage is compiling the source code of the application and the paho library which then get copied to the second stage which will be the final image for the application. Please refer to the the [docker documentation](https://docs.docker.com/develop/develop-images/multistage-build/) for more information regarding multi-stage builds.
 
 
 
