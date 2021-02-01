@@ -14,7 +14,7 @@
   - [Licence and Legal Information](#licence-and-legal-information)
 
 ## Description
-This repository contains the source files to build the Databus Ping Pong application example implemented in C#. Please refer to the [main repository](https://github.com/industrial-edge/databus-ping-pong) for more information about this application example.
+This repository contains the source files to build the Databus Ping Pong application example implemented in C. Please refer to the [main repository](https://github.com/industrial-edge/databus-ping-pong) for more information about this application example.
 
 ### Overview
 
