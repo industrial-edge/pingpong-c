@@ -18,7 +18,7 @@ RUN cd /src  && cmake . && make
 FROM ubuntu:20.04
 
 #install the libssl-dev and libjson-c-dev package
-RUN apt update && apt install -y libssl-dev libjson-c-dev#
+RUN apt update && apt install -y libssl-dev libjson-c-dev
 #copy the compiled application and library from the build image to the applciation image
 COPY --from=build-env /src/paho_pingpong /
 COPY --from=build-env /usr/local/lib/libpaho-mqtt3as.so.1 /
