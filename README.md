@@ -25,12 +25,12 @@ The fist stage is compiling the source code of the application and the paho libr
 
 ## Installation
 
-Please refer to the [Installation](https://github.com/industrial-edge/databus-ping-pong/blob/main/docs/Installation.md) section of the main repository on how to build and deploy the application to a Industrial Edge Device.
+Please refer to the [Installation](https://github.com/industrial-edge/pingpong-python/blob/main/docs/Installation.md) section of the main repository on how to build and deploy the application to a Industrial Edge Device.
 When creating a configuration for the application in the Industrial Edge Management System, you can use the the [mqtt-config.json](cfg-data/mqtt-config.json) file from this repository.
 
 ## Usage
 
-Please refer to the [Testing](https://github.com/industrial-edge/databus-ping-pong/blob/main/docs/Installation.md#testing-the-application-using-simatic-flow-creator) section of the main repository on how to build and deploy the application to a Industrial Edge Device.
+Please refer to the [Testing](https://github.com/industrial-edge/pingpong-python/blob/main/docs/Installation.md#testing-the-application-using-simatic-flow-creator) section of the main repository on how to build and deploy the application to a Industrial Edge Device.
 
 ## Documentation
 
