@@ -25,11 +25,13 @@ This application example shows how to connect to the IE Databus via MQTT and how
 
 It also uses a multi-stage process for building the docker image to keep the image size as small as possible. The two ``FROM`` Statements in the [Dockerfile](src/Dockerfile) separate the build process into two stages. The fist stage is compiling the source code of the application and the paho library which then get copied to the second stage which will be the final image for the application. Please refer to the the [docker documentation](https://docs.docker.com/develop/develop-images/multistage-build/) for more information regarding multi-stage builds.
 
+![Use Case](docs/DataFlow.png)
+
 ### General task
 
 The application includes a MQTT client to subscribe to one topic of the IE Databus and waits to receive data. When data arrives, it publishes a corresponding answer to a second topic of the IE Databus. If it receives the string "Ping", it will answer with "Pong" and the other way around.
 
-![Use Case](docs/graphics/Usecase.png)
+![Use Case](docs/Usecase.png)
 
 The names of the IE Databus topics as well as the credentials used by the application can be configured, otherwise environmental variables included in the docker-compose file are used.
 
