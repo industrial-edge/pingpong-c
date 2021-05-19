@@ -252,7 +252,7 @@ int main(int argc, char *argv[])
 		strcat(address2, port);
 
 		username = json_object_get_string(j_username);
-		password = json_object_get_string(j_username);
+		password = json_object_get_string(j_password);
 		topic1 = json_object_get_string(j_topic1);
 		topic2 = json_object_get_string(j_topic2);
 		address = address2;
