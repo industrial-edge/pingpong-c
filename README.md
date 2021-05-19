@@ -43,7 +43,6 @@ The names of the IE Databus topics as well as the credentials used by the applic
   - IE Databus V1.2.16
   - IE Databus Configurator V1.2.23
   - IE Flow Creator V1.1.2
-  - IE App Configuration Service V1.0.5
 - Industrial Edge Device V1.2.0-56
 - Industrial Edge App Publisher V1.2.7
 - Docker Engine V20.10.3
