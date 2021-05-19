@@ -17,7 +17,7 @@ This application example contains the source files to build a Databus Ping Pong 
 
 ## Description
 
-This repository contains the source files to build the Databus Ping Pong application example implemented in C. Please refer to the [main repository](https://github.com/industrial-edge/pingpong-python) for more information about this application example.
+This repository contains the source files to build the Databus Ping Pong application example implemented in C. Please refer to the [Ping Pong in Python repository](https://github.com/industrial-edge/pingpong-python) for more information about this application example.
 
 ### Overview
 
@@ -57,14 +57,14 @@ The names of the IE Databus topics as well as the credentials used by the applic
 
 ## Installation
 
-Please refer to the [Installation](https://github.com/industrial-edge/pingpong-python/blob/main/docs/Installation.md) section of the main repository on how to build and deploy the application to a Industrial Edge Device.
+Please refer to the [Installation](https://github.com/industrial-edge/pingpong-python/blob/main/docs/Installation.md) section of the *Ping Pong in Python* repository on how to build and deploy the application to a Industrial Edge Device.
 When creating a configuration for the application in the Industrial Edge Management System, you can use the the [mqtt-config.json](cfg-data/mqtt-config.json) file from this repository.
 
 ## Usage
 
 Once the application is successfully deployed, it can be tested using the IE Flow Creator.
 
-Please refer to the [Testing](https://github.com/industrial-edge/pingpong-python/blob/main/docs/Installation.md#testing-the-application-using-simatic-flow-creator) section of the main repository on how to use it.
+Please refer to the [Testing](https://github.com/industrial-edge/pingpong-python/blob/main/docs/Installation.md#testing-the-application-using-simatic-flow-creator) section of the *Ping Pong in Python* repository on how to use it.
 
 ## Documentation
 
