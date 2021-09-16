@@ -7,21 +7,18 @@ services:
         image: pingpong_c:1.3.0
         restart: unless-stopped
         mem_limit: 100mb
-    networks:
-      - proxy-redirect
-    environment:
-          - TOPIC_1=topic1
-          - TOPIC_2=topic2
-          - MQTT_USER=edge
-          - MQTT_PASSWORD=edge
-          - MQTT_IP=tcp://ie-databus:1883
-    mem_limit: 100mb
-    
-    volumes:
-        - './publish/:/publish/'
-        - './cfg-data/:/cfg-data/'
+        networks:
+            - proxy-redirect
+        environment:
+              - TOPIC_1=topic1
+              - TOPIC_2=topic2
+              - MQTT_USER=edge
+              - MQTT_PASSWORD=edge
+              - MQTT_IP=tcp://ie-databus:1883        
+        volumes:
+            - './publish/:/publish/'
+            - './cfg-data/:/cfg-data/'
 
-#### Network ####
 networks:
   proxy-redirect:
       external:
