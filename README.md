@@ -24,7 +24,7 @@ The IE Flow Creator is used to exchange data between different topics within the
 
 ![Use Case](/docs/DataFlow.png)
 
-This implementation example uses the ``ubuntu:20.04`` image, as well as the [Eclipse Paho MQTT C library](https://github.com/eclipse/paho.mqtt.c) to enable the connection to the IE Databus.
+This implementation example uses the ``ubuntu:20.04`` image as base, the [Eclipse Paho MQTT C library](https://github.com/eclipse/paho.mqtt.c) to enable the connection to the IE Databus and ``cmake`` for building the code.
 Here a multi-stage process for building the docker image is used to keep the image size as small as possible. The two ``FROM`` Statements in the [Dockerfile](src/Dockerfile) separate the build process into two stages.
 The fist one is compiling the source code to an executable which then gets copied to the second stage. This stage finally creates the application container, where the executable runs. Please refer to the the [docker documentation](https://docs.docker.com/develop/develop-images/multistage-build/) for more information regarding multi-stage builds.
 
