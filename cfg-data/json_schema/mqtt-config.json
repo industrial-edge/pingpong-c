@@ -1,0 +1,78 @@
+{
+ "uischema":{
+  "type": "Group",
+  "elements": [
+    {
+      "type": "Group",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/MQTT_IP"
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/MQTT_USER"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/MQTT_PASSWORD"
+            }
+          ]
+        }
+      ],
+      "label": "IE Databus credentials"
+    },
+    {
+      "type": "Group",
+      "elements": [
+        {
+		"type": "HorizontalLayout",
+		"elements":[
+		{
+		  "type": "Control",
+		  "scope": "#/properties/TOPIC_1"
+		},
+		{
+		  "type": "Control",
+		  "scope": "#/properties/TOPIC_2"
+		}
+        	]
+        }
+      ],
+      "label": "IE Databus topics"
+    }
+  ]
+ },
+ "dataschema":{
+  "type": "object",
+  "properties": {
+	"TOPIC_1": {
+	  "title": "Topic 1",
+	  "default": "topic1",
+	  "type": "string"
+    },
+	"TOPIC_2": {
+	  "title": "Topic 2",
+	  "default": "topic2",
+      "type": "string"
+    },
+	"MQTT_IP": {
+	  "title": "MQTT Broker",
+	  "default": "ie-databus",
+      "type": "string"
+    },
+	"MQTT_USER": {
+	  "title": "Username",
+      "type": "string"
+    },
+	"MQTT_PASSWORD": {
+	  "title": "Password",
+      "type": "string"
+    }
+  },
+  "required": ["TOPIC_1", "TOPIC_2", "MQTT_IP", "MQTT_USER", "MQTT_PASSWORD"]
+}
+}
