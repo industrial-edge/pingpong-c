@@ -22,7 +22,7 @@ This application example contains the source files to build a Databus Ping Pong 
 This application example shows how to connect to the IE Databus via MQTT and how to publish and subscribe data using an implementation in C.
 The IE Flow Creator is used to exchange data between different topics within the IE Databus.
 
-![Use Case](/docs/DataFlow.png)
+![Use Case](/docs/Overview.png)
 
 This implementation example uses the ``ubuntu:20.04`` image as base, the [Eclipse Paho MQTT C library](https://github.com/eclipse/paho.mqtt.c) to enable the connection to the IE Databus and ``cmake`` for building the code.
 Here a multi-stage process for building the docker image is used to keep the image size as small as possible. The two ``FROM`` Statements in the [Dockerfile](src/Dockerfile) separate the build process into two stages.
@@ -37,7 +37,7 @@ This example also shows two ways of configuring the application:
 
 The application includes a MQTT client to subscribe to one topic of the IE Databus and waits to receive data. When data arrives, it publishes a corresponding answer to a second topic of the IE Databus. If it receives the string "Ping", it will answer with "Pong" and the other way around.
 
-![Use Case](/docs/Usecase.png)
+![Use Case](/docs/PingPongFlow.png)
 
 The names of the IE Databus topics as well as the credentials used by the application can be configured via different options, otherwise environmental variables included in the docker-compose file are used.
 
@@ -45,14 +45,14 @@ The names of the IE Databus topics as well as the credentials used by the applic
 
 ### Used components
 
-- Industrial Edge Management V1.3.0-58 / V1.3.10
-  - IE Databus Configurator V1.3.5
-  - IE Databus V1.3.5
-  - IE Flow Creator V1.1.2
+- Industrial Edge Management V1.3.0-58 / V1.4.3
+  - IE Databus Configurator V1.4.22
+  - IE Databus V1.4.16
+  - IE Flow Creator V1.2.2
   - IE App Configuration Service V1.0.7
-- Industrial Edge Device (IED) V1.2.0-56
-- Industrial Edge App Publisher V1.3.7
-- Docker Engine V20.10.8
+- Industrial Edge Device (IED) V1.3.0-57 or vIED V1.3.1-1-a
+- Industrial Edge App Publisher V1.4.3
+- Docker Engine V20.10.10
 - Docker Compose V1.28.5
 
 ### Further requirements
