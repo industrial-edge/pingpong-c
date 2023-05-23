@@ -4,7 +4,7 @@ services:
     #### pingpong service ####
     pingpong_c:
         build: ./src
-        image: pingpong_c:1.3.0
+        image: pingpong_c:1.4.0
         restart: unless-stopped
         mem_limit: 100mb
         networks:
