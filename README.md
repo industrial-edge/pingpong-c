@@ -7,8 +7,8 @@ This application example contains the source files to build a Databus Ping Pong 
     - [Overview](#overview)
     - [General task](#general-task)
   - [Requirements](#requirements)
+    - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
-    - [Further requirements](#further-requirements)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Documentation](#documentation)
@@ -25,6 +25,7 @@ The IE Flow Creator is used to exchange data between different topics within the
 ![Use Case](/docs/Overview.png)
 
 This implementation example uses the ``ubuntu:20.04`` image as base, the [Eclipse Paho MQTT C library](https://github.com/eclipse/paho.mqtt.c) to enable the connection to the IE Databus and ``cmake`` for building the code.
+
 Here a multi-stage process for building the docker image is used to keep the image size as small as possible. The two ``FROM`` Statements in the [Dockerfile](src/Dockerfile) separate the build process into two stages.
 The fist one is compiling the source code to an executable which then gets copied to the second stage. This stage finally creates the application container, where the executable runs. Please refer to the the [docker documentation](https://docs.docker.com/develop/develop-images/multistage-build/) for more information regarding multi-stage builds.
 
@@ -43,36 +44,34 @@ The names of the IE Databus topics as well as the credentials used by the applic
 
 ## Requirements
 
+###  Prerequisites
+
+- Access to an Industrial Edge Management (IEM) with onboarded Industrial Edge Device (IED)
+- IEM: Installed apps: Databus Configurator, IE App Configuration Service
+- IED: Installed apps: Databus, IE Flow Creator
+
 ### Used components
 
-- Industrial Edge Management V1.3.0-58 / V1.4.3
-  - IE Databus Configurator V1.4.22
-  - IE Databus V1.4.16
-  - IE Flow Creator V1.2.2
-  - IE App Configuration Service V1.0.7
-- Industrial Edge Device (IED) V1.3.0-57
-- Industrial Edge App Publisher V1.4.3
+- Industrial Edge Management V1.5.2-4 / V1.12.10
+  - IE App Configuration Service V1.2.2
+  - IE Databus Configurator V2.1.0-3
+- Industrial Edge Device (IED) V1.9.0-27  
+  - IE Databus V2.1.0-4
+  - IE Flow Creator V1.12.0-1
+- Industrial Edge App Publisher V1.10.5
 - Docker Engine V20.10.10
-- Docker Compose V1.28.5
-
-### Further requirements
-
-- IED is onboarded to a IEM
-- IE Databus Configurator is deployed to the IEM
-- IE Configuration Service is deployed to the IEM
-- IE Databus is deployed to the IED
-- IE Flow Creator is deployed to the IED
+- Docker Compose V1.29.2
+- Web browser (Chrome)
 
 ## Installation
 
-Please refer to the [Installation](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#installation) section of the *Ping Pong in C#* repository on how to build and deploy the application to an IED. Just use the source files from this repository and follow the instructions.
+Please refer to the [Installation](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#installation) section of the *Ping Pong in C#* repository on how to build and deploy the application to an IED. Just use the source files from this repository and follow the instructions:
 
 - [Build application](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#build-application)
 - [Configuring the Industrial Edge Databus](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#configuring-the-industrial-edge-databus)
 - [Create configuration for the application](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#create-configuration-for-the-application)
 - [Upload the application to the Industrial Edge Management](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#create-configuration-for-the-application)
 - [Configuring and deploying the application to a Industrial Edge Device](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#configuring-and-deploying-the-application-to-a-industrial-edge-device)
-- [Testing the application using Simatic Flow Creator](https://github.com/industrial-edge/pingpong-csharp/blob/main/docs/Installation.md#testing-the-application-using-simatic-flow-creator)
 
 ## Usage
 
