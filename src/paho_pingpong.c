@@ -15,6 +15,14 @@
 #define QOS 1
 #define TIMEOUT 10000L
 
+char buffer[1024];
+struct json_object *parsed_json;
+struct json_object *j_username;
+struct json_object *j_password;
+struct json_object *j_address;
+struct json_object *j_topic1;
+struct json_object *j_topic2;
+		
 const char *username;
 const char *password;
 const char *address;
@@ -220,24 +228,23 @@ int cfileexists(const char *filename)
 
 int main(int argc, char *argv[])
 {
-
+	printf("\n");
+	printf("Starting pingpong app...\n");
+	
 	size_t i;
 
 	int exist = cfileexists("/cfg-data/mqtt-config.json");
 
 	if (exist == 1)
 	{
+		printf("Reading parameters from configuration file\n");
+				
 		FILE *fp;
-		char buffer[1024];
-		struct json_object *parsed_json;
-		struct json_object *j_username;
-		struct json_object *j_password;
-		struct json_object *j_address;
-		struct json_object *j_topic1;
-		struct json_object *j_topic2;
+
 		fp = fopen("/cfg-data/mqtt-config.json", "r");
 		fread(buffer, 1024, 1, fp);
 		fclose(fp);
+
 		parsed_json = json_tokener_parse(buffer);
 		json_object_object_get_ex(parsed_json, "MQTT_USER", &j_username);
 		json_object_object_get_ex(parsed_json, "MQTT_PASSWORD", &j_password);
@@ -245,7 +252,7 @@ int main(int argc, char *argv[])
 		json_object_object_get_ex(parsed_json, "TOPIC_1", &j_topic1);
 		json_object_object_get_ex(parsed_json, "TOPIC_2", &j_topic2);
 
-		char address2[] = "tcp://";
+		char address2[50] = "tcp://";
 		char port[] = ":1883";
 
 		strcat(address2, json_object_get_string(j_address));
@@ -259,7 +266,8 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-
+		printf("Reading parameters from environment variables\n");
+		
 		address = getenv("MQTT_IP");
 		username = getenv("MQTT_USER");
 		password = getenv("MQTT_PASSWORD");
@@ -269,6 +277,8 @@ int main(int argc, char *argv[])
 
 	printf("ip:%s user:%s pw:%s t1:%s t2_%s", address, username, password, topic1, topic2);
 
+	printf("Create client instance\n");
+	
 	MQTTAsync client;
 	MQTTAsync_connectOptions conn_opts = MQTTAsync_connectOptions_initializer;
 	MQTTAsync_disconnectOptions disc_opts = MQTTAsync_disconnectOptions_initializer;
