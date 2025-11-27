@@ -33,7 +33,7 @@ The fist one is compiling the source code to an executable which then gets copie
 This example also shows two ways of configuring the application:
 
 - configuration via file upload (fixed configuration file)
-- configuration via system app Configuration Service (custom configuration UI with JSON Forms)
+- configuration via UI (custom configuration UI with JSON Forms)
 
 ### General task
 
@@ -48,20 +48,19 @@ The names of the Databus topics as well as the credentials used by the applicati
 ###  Prerequisites
 
 - Access to an Industrial Edge Management (IEM) with onboarded Industrial Edge Device (IED)
-- IEM: Installed apps: Databus Configurator, IE App Configuration Service
+- IEM: Installed apps: Databus Configurator
 - IED: Installed apps: Databus, Flow Creator
 
 ### Used components
 
-- Industrial Edge Management V1.5.2-4 / V1.12.10
-  - IE App Configuration Service V1.2.2
-  - Databus Configurator V2.1.0-3
-- Industrial Edge Device (IED) V1.9.0-27  
-  - Databus V2.1.0-4
-  - Flow Creator V1.12.0-1
-- Industrial Edge App Publisher V1.10.5
-- Docker Engine V20.10.10
-- Docker Compose V1.29.2
+- Industrial Edge Management (IEM) V2.6.1-4 / V1.15.9
+  - Databus Configurator V3.2.3
+- Industrial Edge Virtual Device (IED) V1.24.1-1b
+  - Databus V3.2.3
+  - Flow Creator V 1.19.2
+- Industrial Edge App Publisher V1.23.5
+- Docker Engine V29.0.1
+- Docker Compose V2.4
 - Web browser (Chrome)
 
 ## Installation
@@ -98,7 +97,7 @@ The finished flow is available [here](/src/Flow_Pingpong_Test.json) and can be i
   - [Industrial Edge Forum](https://forum.mendix.com/link/space/industrial-edge)
   - [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
   - [Industrial Edge GitHub page](https://github.com/industrial-edge)
-  - [Industrial Edge documentation page](https://docs.eu1.edge.siemens.cloud/index.html)
+  - [Industrial Edge documentation page](https://docs.industrial-operations-x.siemens.cloud/p/industrial-edge)
   
 ## Contribution
 
